@@ -63,7 +63,7 @@ the buffer is visible, then set another timer and try again later."
         (delete-window window)))
     (unless (window-live-p window)
       (with-current-buffer buffer
-        (set-buffer-modified-p nil)
+        (set-buffer-modified-p t)
         (+popup-buffer-mode -1)
         (unless +popup--inhibit-transient
           (let ((ttl (+popup-parameter 'ttl window)))
